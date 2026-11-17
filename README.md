@@ -70,13 +70,16 @@ just `str -> list[float]`:
 from ai_customer_support_bot.bot import SupportBot
 from ai_customer_support_bot.kb import KnowledgeBase
 
+
 def my_embedder(text: str) -> list[float]:
     # e.g. call your embedding API / local model here
     return real_embed(text)
 
+
 def my_llm(prompt: str) -> str:
     # e.g. call your chat model here to phrase the answer
     return real_complete(prompt)
+
 
 kb = KnowledgeBase(embedder=my_embedder)
 kb.add_qa("How do I reset my password?", "Open Settings > Security and reset it.")
